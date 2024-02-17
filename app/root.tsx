@@ -1,10 +1,21 @@
 import type { LinksFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet } from "@remix-run/react";
-
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
 import globalStylesUrl from "~/styles/base.css";
+import resetStyleUrl from "~/styles/reset.css";
+import { links as linksHeader } from "~/components/Header";
+import { Header } from "~/components/index";
 
 export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: resetStyleUrl },
   { rel: "stylesheet", href: globalStylesUrl },
+  ...linksHeader(),
 ];
 
 export default function App() {
@@ -17,10 +28,13 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <header>header</header>
-        <Outlet />
-        <footer>footer</footer>
-        <LiveReload />
+        <div id="app">
+          <Header />
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </div>
       </body>
     </html>
   );

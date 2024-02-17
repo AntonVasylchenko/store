@@ -1,18 +1,20 @@
 @font-face {
   font-family: "Nunito";
-  src: url("/public/fonts/Nunito-Regular.ttf") format("ttf");
+  src: url("../../public/fonts/Nunito-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Nunito";
-  src: url("/public/fonts/NunitoSans-SemiBold.ttf") format("ttf");
+  src: url("../../public/fonts/NunitoSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Nunito";
-  src: url("/public/fonts/Nunito-Bold.ttf") format("ttf");
+  src: url("../../public/fonts/Nunito-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -99,8 +101,15 @@ html {
 
 body {
   height: 100%;
+
+}
+
+#app {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 main {
